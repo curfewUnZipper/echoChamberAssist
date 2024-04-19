@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Echo-Chamber</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css" />
+    <!-- <meta http-equiv="refresh" content="1"> -->
+
+    <link rel="stylesheet" href="master.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav id="navbar">
+        <h2 id="nav-branding">Echo-Chamber</h2>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="/" id="nav-link">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a id="nav-link" onclick="choiceRedirect()" style="cursor: pointer"
+              >Upload</a
+            >
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <!-- <span class="bar"></span> -->
+        </div>
+      </nav>
+    </header>
+
+    <div class="jumbotron text-center">
+      <h1>Echo-Chamber</h1>
+      <p>Connect With your friends!</p>
+    </div>
+
+    <!-- -----------------The Dynamic Posts--------------------------- -->
+
+    <form action="/like" method="post">
+      <div class="overall"></div>
+    </form>
+    <audio id="soundEffect">
+      <source src="like.mp3" type="audio/mp3" />
+    </audio>
+    <script>
+      function playSound() {
+        var audio = document.getElementById("soundEffect");
+        audio.play();
+      }
+
+      // code for redirecting to upload or sign-in page
+      function choiceRedirect() {
+        if (sessionStorage.getItem("userOn") == null) {
+          window.location.replace(window.location.href + "user");
+        } else {
+          window.location.replace(window.location.href + "upload");
+        }
+      }
+    </script>
+    <script src="/script.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
