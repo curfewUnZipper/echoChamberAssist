@@ -57,7 +57,56 @@
     <!-- -----------------The Dynamic Posts--------------------------- -->
 
     <form action="/like" method="post">
-      <div class="overall"></div>
+      <div class="overall">
+        <!-- initialising one message -->
+        <div class="container" data-post-id="youAreFlash">
+          <div
+            class="col-sm-4 col-md-11 col-lg-12"
+            style="
+              text-align: center;
+              border: 1px solid white;
+              padding: 10px;
+              border-radius: 20px;
+              margin: 10px;
+              background-color: lightgreen;
+              border-top: 13px solid transparent;
+              border-right: 36px solid white;
+              border-bottom: 1px solid white;
+            "
+          >
+            <div class="news-container post1">
+              <h3><b>&lt;Messages Appear Here&gt;</b></h3>
+              <p>
+                If you are seeing this, that means you are faster than light.
+              </p>
+              <p><b>69:420 hrs</b></p>
+
+              <div class="post-ratings-container">
+                <div class="post-rating">
+                  <span
+                    class="post-rating-button material-icons"
+                    onclick="playSound()"
+                    >thumb_up</span
+                  >
+                  <span class="post-rating-count"
+                    ><input name="like" type="text" value="69" readonly
+                  /></span>
+                </div>
+                <div class="post-rating">
+                  <span
+                    class="post-rating-button material-icons"
+                    onclick="playSound()"
+                    >thumb_down</span
+                  >
+                  <span class="post-rating-count"
+                    ><input name="dislike" type="text" value="420" readonly
+                  /></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
     <audio id="soundEffect">
       <source src="like.mp3" type="audio/mp3" />
